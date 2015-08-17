@@ -4,6 +4,7 @@ namespace ProjectManager\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use ProjectManager\Client;
 use ProjectManager\Http\Requests;
 use ProjectManager\Http\Controllers\Controller;
 
@@ -37,7 +38,7 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Client::create($request->all());
     }
 
     /**
@@ -48,19 +49,9 @@ class ClientController extends Controller
      */
     public function show($id)
     {
-        //
+        return Client::find($id);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -82,6 +73,6 @@ class ClientController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Client::find($id)->delete();
     }
 }

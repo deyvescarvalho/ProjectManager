@@ -144,6 +144,8 @@ return [
         ProjectManager\Providers\EventServiceProvider::class,
         ProjectManager\Providers\RouteServiceProvider::class,
 
+
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
     ],
 
     /*
